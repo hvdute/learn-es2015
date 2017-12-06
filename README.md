@@ -30,3 +30,17 @@ An example for `webpack` config with `babel-loader`
     This Webpack config will traspiling our code that contains ES6 code to ES5 version, bundle it into a bundle called `bundle.js`
 
 ### **3. ES6 Syntax**
+1. Let keyword:  
+In ES5, we have to deal with scope and hoisting in a tricky way. There are three main tricky things we have in ES5:
+
+    - Variables declared by `var` keyword only have local scope in function body. That means there is no block-scope in javascript using `var` keyword.
+    - Variable declared using `var` keyword can be re-declared accidently with no errors or warnings
+    - In a scope, `function` and `var` declared variables with be move to the top of that scope when compiling. This is called `hoisting`.  
+
+    Now with ES6, variables declared with `let` keyword will have block-scope and can not be re-declared.  
+        `let varName = <....>;`
+
+2. `const` keyword  
+In ES5, we have no way to define constants. Now ES6 provides us `const` keyword. With `const` keyword, we can define variables that cannot be re-assigned. But if that const is an object. We can still change its properties...
+
+    _Please take a look at `snippets/let-const.js` file for examples about let, const keyword._
