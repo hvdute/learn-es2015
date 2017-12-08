@@ -67,3 +67,21 @@ In traditional JS, we used to concat string by `+` operator or String.prototype.
 4. Spread operator  
 Spread syntax allows an iterable such as an array expression to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals) are expected. For examples, please look at `snippets/spread.js`.
 
+5. Maps  
+The Map object holds key-value pairs. Any value (both objects and primitive values) may be used as either a key or a value.  
+  - Syntax: `new Map()`
+  - Set key and value: `myMap.set(key, value)`  
+    key and value here can be anything, anytype.
+  - Get entry using its key: `myMap.get(key);`
+  - Get all entries as an Iterable object: `myMap.entries()`
+  - Get all keys as an Iterable object: `myMap.keys()`
+  - Get all values as an Iterable object: `myMap.values()`
+
+6. Sets  
+The Set object lets you store unique values of any type, whether primitive values or object references. Set objects are collections of values. You can iterate through the elements of a set in insertion order. A value in the Set may only occur once; it is unique in the Set's collection. 
+  - Syntax: `new Set()`
+  - Add item to Set: `mySet.add(item)`  
+    `item` can be anything
+  - Delete item from set: `mySet.delete(value)`
+  - Loop through items: `mySet.forEach(item => {.....})`
+
