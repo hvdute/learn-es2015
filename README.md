@@ -85,3 +85,7 @@ The Set object lets you store unique values of any type, whether primitive value
   - Delete item from set: `mySet.delete(value)`
   - Loop through items: `mySet.forEach(item => {.....})`
 
+7. For..of loop  
+The for...ofcreates a loop iterating over iterable objects (including Array, Map, Set, String, TypedArray, arguments object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property.
+
+_Example can be found in `snippets/for-of.js`_
