@@ -89,3 +89,10 @@ The Set object lets you store unique values of any type, whether primitive value
 The for...ofcreates a loop iterating over iterable objects (including Array, Map, Set, String, TypedArray, arguments object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property.
 
 _Example can be found in `snippets/for-of.js`_
+
+### **4. ES6 Functions and Objects**  
+
+1. Default parameters  
+Default function parameters allow formal parameters to be initialized with default values if no value or undefined is passed.  
+
+_Example can be found in `snippets/default-param.js`_
