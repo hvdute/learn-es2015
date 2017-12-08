@@ -44,3 +44,26 @@ In ES5, we have to deal with scope and hoisting in a tricky way. There are three
 In ES5, we have no way to define constants. Now ES6 provides us `const` keyword. With `const` keyword, we can define variables that cannot be re-assigned. But if that const is an object. We can still change its properties...
 
     _Please take a look at `snippets/let-const.js` file for examples about let, const keyword._
+
+3. Template string  
+In traditional JS, we used to concat string by `+` operator or String.prototype.concat() like this:  
+    ```javascript
+    let str = "Dung" + " Hoang";
+    let str2 = "dunghv@dgroup.co";
+    let res = str.concat(" ", str2); // => "Dung Hoang dunghv@dgroup.co"
+    ```
+    Now with ES6, all this uncomfortably things has gone. Template string is here for the rescue.  
+    ```javascript
+    let config = {
+      host: 'localhost',
+      port: 3000,
+      scheme: 'https'
+    };
+    let URI = `${config.scheme}://${config.host}:${config.port}/`;
+    // URI => https://localhost:3000/
+    ```
+    Inside `${expression}`, we can put anything that can evalute to String. Also, JS don't care about spaces.
+
+4. Spread operator  
+Spread syntax allows an iterable such as an array expression to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals) are expected. For examples, please look at `snippets/spread.js`.
+
