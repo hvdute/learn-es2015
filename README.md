@@ -173,3 +173,49 @@ Some new built-in methods of JS object literals:
     // this will send all the string template to myStringProccessor as a param, didn't see that coming, WTF :)))
   }
   ```
+
+3. Arrow function
+
+Sometimes, it's called fat-arrow function, an abreviated syntax for working with functions (which can be used for passing parameters,...). Some notable points:
+
+- Its doesn't have a name, but we can use the unnamed function it returned an assign to a variable:
+
+```javascript
+let sayHello = () => { /* body of the function... */ };
+```
+
+- If the body of the function only have one statement, we can ommit the curly brackets.
+
+```javascript
+let sayHello = () => console.log(''Hello buddy!);
+```
+
+- If the function body only have a single statement or a combined expression, arrow function will always return the returned value of that statement or that expression.
+
+```javascript
+let myAge = (birthYear) => 2017 - birthYear;
+myAge(1995); // return 22
+// or we can wrap the expression for clearer reading.
+// ............... => (2017 - birthYear);
+```
+
+- If we only have one parameter, we can ommit the parenthesises:
+
+```javascript
+let sayHello = name => console.log(`Hello Mr/Ms ${name}`);
+sayHello("Dung Hoang"); // return 'Hello Mr/Ms Dung Hoang'
+```
+
+- Arrow function 'lexical' `this`: An arrow function doesn't have its own `this` like the normal function. It uses the lexical `this` of the parent scope.
+
+```javascript
+function Person() {
+  this.name = "Default name";
+
+  let sayIntro = () => {
+    console.log(this.name);
+  };
+  sayIntro(); // return "Default name"
+}
+```
+
