@@ -283,3 +283,20 @@ myCounter.next().value; // return 1 and so on for the future calls.....
 // the last next() call after no more yield call will return an object
 ```
 
+6. Symbols
+
+Symbol is new primitive type in ES6. A symbol is a unique value that can be used as property keys,...
+
+```javascript
+let mySecretKey = new Symbol();
+let myWallet = {
+  cash: 5000,
+  // ....
+};
+// now i put my secret at a secret position that only mySecretKey can reveal it.
+myWallet[mySecretKey] = "This is a secret...";
+console.log(mySecretKey); // Symbol()
+console.log(myWallet['Symbol()']); // undefined
+console.log(myWallet[Symbol()]); // undefined
+console.log(myWallet[mySecretKey]); // "This is a secret..."
+```
