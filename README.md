@@ -300,3 +300,19 @@ console.log(myWallet['Symbol()']); // undefined
 console.log(myWallet[Symbol()]); // undefined
 console.log(myWallet[mySecretKey]); // "This is a secret..."
 ```
+
+7. Iterators
+
+The iterable protocol allows JavaScript objects to define or customize their iteration behavior, such as what values are looped over in a for..of construct. Some built-in types are built-in iterables with a default iteration behavior, such as Array or Map, while other types (such as Object) are not.
+
+- `[Symbol.iterator]` - A zero arguments function that returns an object, conforming to the iterator protocol.
+
+```javascript
+let myName = "Dung Hoang";
+myIterator = myName[Symbol.iterator](); // return a iterable object (a generator)
+myIterator.next(); // return { value: 'D', done: false }
+[...myIterator]; // return ["u", "n", "g", " ", "H", "o", "a", "n", "g"]
+
+// the returned iterable object can also be iterated by for..of syntax
+```
+
