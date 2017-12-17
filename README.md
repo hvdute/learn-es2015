@@ -258,3 +258,28 @@ function showInfo({ name, age, email }) {
 }
 showInfo(person); // ...
 ```
+
+5. Generators
+
+Generator is a function that can be paused and resumed. It usually be used when dealing with asynchronous task....
+
+```javascript
+function* count(number) {
+  let i = 0;
+  while (i < number) {
+    yield i;
+    i++
+  }
+  return true; // return something when the generator has done.
+}
+let myCounter = count(4);
+myCounter.next();
+// return an object
+// {
+//   value: 0, // this is the value returned by the first yield call
+//   done: false // there are still yield calls, so done still be false
+// }
+myCounter.next().value; // return 1 and so on for the future calls.....
+// the last next() call after no more yield call will return an object
+```
+
