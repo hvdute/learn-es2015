@@ -219,3 +219,42 @@ function Person() {
 }
 ```
 
+4. Destructuring assignments
+
+This is a new way to extract data from array, object which is more convenient than the traditional way.
+
+- Array destructuring
+
+```javascript
+let myArr = [4, 5, 56];
+let [a, b] = myArr;
+// a = 4, b = 5
+// now we can swapping our two a and b variables
+[a, b] = [b, a];
+// now a = 5, b = 4
+/// many use cases of array destructuring can be found on MDN documentation.
+```
+
+- Object destructuring
+
+```javascript
+let person = {
+  name: 'Dung Hoang',
+  age: 16,
+  email: 'hvd.ute@gmail.com'
+};
+
+let { name, age } = person;
+// name = 'Dung Hoang', age = 16
+// we can also assign extracted property to new name
+let { email: userEmail } = person;
+// userEmail = 'hvd.ute@gmail.com'
+
+// destructuring object as function params
+function showInfo({ name, age, email }) {
+  console.log(`User name: ${name}`);
+  console.log(`User age: ${age}`);
+  console.log(`User email: ${email}`);
+}
+showInfo(person); // ...
+```
