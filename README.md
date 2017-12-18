@@ -383,3 +383,16 @@ fetch('http://httpbin.org/get')
   .catch(err => err);
 ```
 
+3. Async/Await and uasge with Fetch API
+
+With async/await, we can write asynchronous code in a more synchronous way.
+
+```javascript
+async function getUsers() {
+  const response = await fetch('http://httpbin.org/get');
+  const users = await response.json();
+  return users;
+}
+const data = await getUsers();
+console.log(data);
+```
