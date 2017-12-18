@@ -396,3 +396,39 @@ async function getUsers() {
 const data = await getUsers();
 console.log(data);
 ```
+
+### **5. ES6 Classes**
+
+Basically, this is just a subset, or a new conveniently way to write OOP in JavaScript. There is no new features added. Its still protoype based. Below is an example to write an class vs prototype traditional way.
+
+```javascript
+// ES6 way
+class People {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  sayHello() {
+    console.log(`Hello! I'm ${this.name}. I'm ${this.age} years old now.`);
+  }
+}
+
+let dungHoang = new People('Dung', 15);
+// call the sayHello method
+dungHoang.sayHello();
+// return Hello! I'm Dung. I'm 15 years old now....
+
+// traditional way
+function People(name, age) {
+  this.name = name;
+  this.age = age;
+}
+People.prototype.sayHello = function() {
+  console.log(`Hello! I'm ${this.name}. I'm ${this.age} years old now.`);
+};
+
+let dungHoang = new People('Dung', 15);
+dungHoang.sayHello();
+```
+
