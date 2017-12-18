@@ -457,3 +457,5 @@ huyen.sayHello();
 // BTW, I have a MBA in Medical and Pharma.
 ```
 
+
+### That basicaly some notable new features of ES6.
