@@ -316,3 +316,51 @@ myIterator.next(); // return { value: 'D', done: false }
 // the returned iterable object can also be iterated by for..of syntax
 ```
 
+### **4. Asynchronous features**
+
+1. Promises
+
+Promise is a native API of Javascript that allow us to handle asynchronous task in a more friendly way.
+A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.
+
+A Promise is in one of these states:
+
+pending: initial state, neither fulfilled nor rejected.
+fulfilled: meaning that the operation completed successfully.
+rejected: meaning that the operation failed.
+A pending promise can either be fulfilled with a value, or rejected with a reason (error). When either of these options happens, the associated handlers queued up by a promise's then method are called. (If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.)
+
+**Basic usage**
+
+- Promise() constructor take a *executor* (a function) which receive two callback as params - `resolve`/`reject`.
+- Inside the *executor*, we call asynchronous tasks, when that task complete, we `resolve` the received data or `reject` if errors happened.
+- Data we `resolve` will be passed to the callback of `.then()` method of the Promise instance.
+- Errors or anything we `reject` will be passed to callback of `.catch()` method....
+
+For example:
+
+```javascript
+function getUsers() {
+  return new Promise((resolve, reject) => {
+    fetch('/api/users', {
+      //.......
+    }).then(data => {
+      resolve(data);
+    })
+    .catch(err => {
+      reject(err);
+    });
+  });
+}
+
+let pendingUsers = getUsers();
+pendingUsers.then(users => {
+  // do something with those users,
+  users.map(user => {
+    console.log(user);
+  });
+}).catch(err => {
+  throw new Error(err);
+});
+```
+
