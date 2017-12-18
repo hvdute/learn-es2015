@@ -364,3 +364,22 @@ pendingUsers.then(users => {
 });
 ```
 
+2. Fetch API
+
+Well JavaScript has it's own built-in clean way now. Along comes the Fetch API a new standard to make server request jam-packed with promises and all those things we learned to love over the years.
+
+```javascript
+fetch('http://httpbin.org/get')
+  .then(response => {
+    // this reponse object contains many methods to deal with various type of response data
+    // this example, we processing returned JSON
+    let jsonValue = response.json(); // this json() method return a Promise
+    jsonValue.then(data => {
+      console.log(data);
+      // return an json object.
+    })
+    .catch(err => err);
+  })
+  .catch(err => err);
+```
+
