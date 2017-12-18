@@ -432,3 +432,28 @@ let dungHoang = new People('Dung', 15);
 dungHoang.sayHello();
 ```
 
+2. Inheritance
+
+Simply using `extends` keywords like this.
+
+```javascript
+// now try to extends the People class in the above example
+class Doctor extends People {
+  constructor(name, age, degree) {
+    super(name, age);
+    // call the parent constructor with name and age... you know what i mean
+    this.degree = degree;
+  }
+  // the sayHello method is inherited
+  // if we want to ovedrive it, do like this
+  sayHello() {
+    super.sayHello(); // call the sayHello method of parent
+    console.log(`BTW, I have a ${this.degree} in Medical and Pharma.`);
+  }
+}
+let huyen = new Doctor('Huyen', 17, 'MBA');
+huyen.sayHello();
+// Hello! I'm Huyen. I'm 17 years old now.
+// BTW, I have a MBA in Medical and Pharma.
+```
+
