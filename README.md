@@ -176,7 +176,7 @@ Some new built-in methods of JS object literals:
 
 3. Arrow function
 
-Sometimes, it's called fat-arrow function, an abreviated syntax for working with functions (which can be used for passing parameters,...). Some notable points:
+Sometimes, it's called fat-arrow function, an abbreviated syntax for working with functions (which can be used for passing parameters,...). Some notable points:
 
 - Its doesn't have a name, but we can use the unnamed function it returned an assign to a variable:
 
